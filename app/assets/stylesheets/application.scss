@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap" ;
+ @import 'font-awesome-sprockets' ;
+ @import 'font-awesome' ;
+
+*{
+ padding:0;
+ margin:0;
+ box-sizing:border-box;
+ line-height:1.5;
+}
+
+
+#error_explanation{
+ color:red;
+}
+
+.flash{
+ color:lightgreen;
+ margin-bottom:16px;
+}

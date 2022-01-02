@@ -1,0 +1,29 @@
+ <div class="col-md-3">
+    <h1>User info</h1>
+    <p><%= attachment_image_tag user, :refile_image, size:"63x63", fallback: "no_image.jpg" %></p>
+    <table class="table">
+        <tr>
+          <td>name</td>
+          <td><%= user.name %></td>
+        </tr>
+        <tr>
+          <td>introduction</td>
+          <td><%= user.introduction %></td>
+        </tr>
+    </table>
+    <%= link_to edit_user_path(user), class:"btn btn-secondary w-100" do %>
+    <i class="fas fa-user-cog"></i>
+    <% end %>
+
+    <h1>New book</h1>
+    <%= form_with model: new_book, local: true do |t| %>
+    <p>Title</p>
+    <%= t.text_field :title, class:"w-100" %>
+    <p>Opinion</p>
+    <%= t.text_area :body, class:"w-100"%>
+    <p>
+    <%= t.submit "Create Book" %>
+    </p>
+    <% end %>
+  </div>
+  <div class="col-md-1"></div>
