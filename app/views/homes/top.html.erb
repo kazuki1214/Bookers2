@@ -1,8 +1,22 @@
-<div>
-  <h1>Welocome to<i class="fas fa-book"></i><strange>Bookers !!</strange></h1>
-  <P>In<i class="fas fa-book"></i><strange>Bookers,</strange></P>
-  <p>you caon share and exchange your opinions,inpressions,and emotions</p>
-  <p>about various books!</p>
-  <p><%= link_to "Log in", new_user_session_path %></p>
-  <p><%= link_to "Sign up", new_user_registration_path %></p>
+<div class="flash">
+  <% flash.each do |keys,value| %>
+    <%= content_tag(:div,value,class:"notice notice_#{keys}") %>
+  <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>Welocome to<i class="fas fa-book"></i><strange>Bookers !!</strange></h1>
+      <P>In<i class="fas fa-book"></i><strange>Bookers,</strange></P>
+      <p>you caon share and exchange your opinions,inpressions,and emotions</p>
+      <p>about various books!</p>
+      <div class="mx-auto col-lg-10 col-md-8">
+        <div class="row">
+          <p class="mb-3 w-100"><%= link_to "Log in", new_user_session_path, class:"btn btn-info py-1 px-2 w-100"%></p>
+        </div>
+        <div class="row">
+          <p class="w-100"><%= link_to "Sign up", new_user_registration_path, class:"btn btn-success py-1 px-2 w-100" %></p>
+        </div>
+      </div>
+  </div>
 </div>

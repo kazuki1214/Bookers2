@@ -1,6 +1,6 @@
  <div class="col-md-3">
-    <h1>User info</h1>
-    <p><%= attachment_image_tag user, :refile_image, size:"63x63", fallback: "no_image.jpg" %></p>
+    <h2>User info</h2>
+    <p><%= attachment_image_tag user, :profile_image, size:"63x63", fallback: "no_image.jpg" %></p>
     <table class="table">
         <tr>
           <td>name</td>
@@ -11,19 +11,22 @@
           <td><%= user.introduction %></td>
         </tr>
     </table>
-    <%= link_to edit_user_path(user), class:"btn btn-secondary w-100" do %>
-    <i class="fas fa-user-cog"></i>
+    <%= link_to edit_user_path(user), class:"btn btn-outline-secondary w-100" do %>
+      <i class="fas fa-user-cog"></i>
     <% end %>
 
-    <h1>New book</h1>
+    <h2 class="mt-3 mb-1">New book</h2>
     <%= form_with model: new_book, local: true do |t| %>
-    <p>Title</p>
-    <%= t.text_field :title, class:"w-100" %>
-    <p>Opinion</p>
-    <%= t.text_area :body, class:"w-100"%>
-    <p>
-    <%= t.submit "Create Book" %>
-    </p>
+    <div class="pb-4">
+      <p>Title</p>
+      <%= t.text_field :title, class:"form w-100 px-3 py-1" %>
+    </div>
+    <div class="pb-4">
+      <p>Opinion</p>
+      <%= t.text_area :body, class:"form w-100 px-3 py-1" %>
+    </div>
+      <p>
+      <%= t.submit "Create Book", class:"btn btn-success py-1 px-2" %>
+      </p>
     <% end %>
   </div>
-  <div class="col-md-1"></div>

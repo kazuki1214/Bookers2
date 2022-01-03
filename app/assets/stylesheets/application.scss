@@ -24,12 +24,31 @@
  line-height:1.5;
 }
 
+.table thead td{
+ border-bottom:2px solid #dee2e6;
+}
 
 #error_explanation{
  color:red;
 }
 
+#error_explanation li{
+ padding-left:40px;
+}
+
 .flash{
  color:lightgreen;
  margin-bottom:16px;
+}
+
+.form{
+ border:1px solid #ced4da;
+}
+
+.field{
+ margin-bottom:10px;
+}
+
+.actions{
+ margin-bottom:10px;
 }

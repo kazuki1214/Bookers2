@@ -1,22 +1,32 @@
-<div>
-  <h1>User info</h1>
-  <div class="error_message">
-    <% if @user.errors.any? %>
-      <%= @user.errors.count %>errors prohibited this obj from being saved:
-      <%= @user.errors.full_messages.each do |error_message| %>
-        <li><%= error_message %></li>
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 mx-auto px-sm-0 px-5">
+      <h2>User info</h2>
+      <div id="error_explanation">
+        <% if @user.errors.any? %>
+          <h2><%= @user.errors.count %>error prohibited this obj from being saved:</h2>
+          <% @user.errors.full_messages.each do |error_message| %>
+            <li><%= error_message %></li>
+          <% end %>
+        <% end %>
+      </div>
+      <%= form_with model: @user, local: true do |f| %>
+      <div class="pb-4">
+        <p>Name</p>
+        <%= f.text_field :name, class:"form w-100 px-3 py-1" %>
+      </div>
+      <div class="pb-4">
+        <p>Image</p>
+        <%= f.attachment_field :profile_image %>
+      </div>
+      <div class="pb-4">
+        <p>introduction</p>
+        <%= f.text_area :introduction, class:"form w-100 px-3 py-1" %>
+      </div>
+      <div class="pb-4">
+        <%= f.submit "Update User", class:"btn btn-secondary py-1 px-2" %>
+      </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
-  <%= form_with model: @user, local: true do |f| %>
-  <p>Name</p>
-  <%= f.text_field :name, class:"w-100" %>
-  <p>Image</p>
-  <%= f.attachment_field :refile_image %>
-  <p>introduction</p>
-  <%= f.text_area :introduction, class:"w-100" %>
-  <div>
-    <%= f.submit "Update User"%>
-  </div>
-  <% end %>
 </div>

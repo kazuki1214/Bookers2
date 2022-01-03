@@ -1,7 +1,4 @@
-
-
 <div class="flash">
-  <%= flash[:created] %>
 </div>
 
 <div class="container px-5 px-sm-0">
@@ -16,8 +13,8 @@
   <div class="row">
   <%= render "users/list", user: @user, new_book: @new_book %>
 
-    <div class="col-md-8  mx-sm-auto">
-      <h1>Books</h1>
+    <div class="col-md-8 offset-md-1 ">
+      <h2>Books</h2>
       <table class="table">
         <thead>
           <tr>
@@ -30,7 +27,7 @@
           <% @books.each do |f| %>
           <tr>
             <td><%= link_to user_path(f.user) do %>
-              <%= attachment_image_tag f.user,:refile_image, size:"40x40", fallback: "no_image.jpg" %>
+              <%= attachment_image_tag f.user,:profile_image, size:"40x40", fallback: "no_image.jpg" %>
               <% end %>
             </td>
             <td><%= link_to book_path(f) do %>
